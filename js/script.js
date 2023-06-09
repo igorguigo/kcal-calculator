@@ -4,6 +4,9 @@ let altura = document.querySelector("input[name='altura']");
 let idade = document.querySelector("input[name='idade']");
 let nv_atividade = document.querySelector("select[name='nv-atividade']");
 let btn = document.querySelector(".btn");
+let form = document.querySelector("form");
+let radioGroup = document.querySelectorAll("input[type='radio'][name='sexo']");
+let selecionado = false;
 
 // Taxa de atividade:
 // Sedentários (pouco ou nenhum exercício) fator = 1.2
@@ -12,12 +15,29 @@ let btn = document.querySelector(".btn");
 // Altamente ativo (exercício pesado de 5 a 6 dias por semana) fator = 1.725
 // Extremamente ativo (exercício pesado diariamente e até 2 vezes por dia) fator = 1.9
 
-btn.addEventListener("click", () => {
+form.addEventListener('submit', (event) => {
+    event.preventDefault();
     sexoValue = sexo.value;
     pesoValue = peso.value;
     alturaValue = altura.value;
     idadeValue = idade.value;
     nv_atividadeValue = nv_atividade.value;
+
+    // for (var i = 0; i < radioGroup.length; i++) {
+    //   if (radioGroup[i].checked) {
+    //     selecionado = true;
+    //     break;
+    //   }
+    // }
+
+    // if(selecionado == false){
+    //   alert('Preencha o campo Sexo');
+    //   return;
+    // }else if(pesoValue == ''){
+    //   alert('Preencha o campo Peso')
+    //   return;
+    // }
+
     console.log(nv_atividadeValue);
 
     if(sexoValue == "masculino"){
@@ -58,5 +78,28 @@ function calcularNvAtividade(nv_atividade){
     break;  
 }
 }
+
+function inputHandler(masks, max, event) {
+  var c = event.target;
+  var v = c.value.replace(/\D/g, '');
+  var m = c.value.length > max ? 1 : 0;
+  VMasker(c).unMask();
+  VMasker(c).maskPattern(masks[m]);
+  c.value = VMasker.toPattern(v, masks[m]);
+}
+
+var alturaMask = ['999'];
+
+VMasker(peso).maskMoney({
+  precision: 2,
+  delimiter: '',
+  allowNegative: false
+});
+
+altura.addEventListener('input', inputHandler.bind(undefined, alturaMask, 14), false);
+idade.addEventListener('input', inputHandler.bind(undefined, alturaMask, 14), false);
+
+
+
 
 

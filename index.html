@@ -10,49 +10,64 @@
 <body>
     <section class="section-calculator">
         <div class="container mx-auto min-h-screen flex justify-center items-center">
-            <div class="calculator mx-auto max-w-[500px] p-8 shadow-2xl rounded-lg font-medium">
-                <h1 class="mb-5 text-2xl font-medium text-[#7B287D]">Calcule sua Taxa metabólica basal</h1>
-                <div class="group-sexo mb-4 text-lg text-[#330C2F]">
-                    <label class="mr-4">Sexo: </label>
-                    <input type="radio" id="id_masculino" name="sexo" value="masculino" required>
-                    <label for="id_masculino">Masculino</label>
-                    <input type="radio" id="id_feminino" name="sexo" value="feminino" required>
-                    <label for="id_feminino">Feminino</label>
-                </div>
-                <div class="group-peso mb-4 text-lg text-[#330C2F]">
-                    <div class="input-peso flex justify-between">
-                        <label>Peso(Kg): </label>
-                        <input class="rounded opacity-80 max-w-[200px] pl-2" type="text" id="id_peso" name="peso" required>
+            <div class="calculator mx-auto max-w-[500px] p-8 shadow-2xl rounded-lg">
+                <form action="">
+                    <h1 class="mb-5 text-2xl font-black text-blue-900">Calculadora de calorias</h1>
+                    <div class="group-sexo mb-4 text-lg text-white">
+                        <label class="mr-4">Sexo: </label>
+                        <input type="radio" class="focus:outline-2 focus:outline-blue-900 focus:ring focus:outline-offset-0" id="id_masculino" name="sexo" value="masculino" required>
+                        <label class="mr-4" for="id_masculino">Masculino</label>
+                        <input type="radio" class="focus:outline-2 focus:outline-blue-900 focus:ring focus:outline-offset-0" id="id_feminino" name="sexo" value="feminino" required>
+                        <label for="id_feminino">Feminino</label>
                     </div>
-                </div>
-                <div class="group-altura mb-4 text-lg text-[#330C2F]">
-                    <div class="input-altura flex justify-between">
-                        <label>Altura(cm): </label>
-                        <input class="rounded opacity-80 max-w-[200px] pl-2" type="text" id="id_altura" name="altura" required>
+                    <div class="group-peso mb-4 text-lg text-white">
+                        <div class="input-peso flex justify-between">
+                            <label>Peso(Kg): </label>
+                            <input class="rounded opacity-80 max-w-[200px] pl-2 text-black text-sm font-normal focus:outline-2 focus:outline-blue-900 focus:ring focus:outline-offset-0" type="text" id="id_peso" name="peso" required>
+                        </div>
                     </div>
-                </div>
-                <div class="group-idade mb-4 text-lg text-[#330C2F]">
-                    <div class="input-idade flex justify-between">
-                        <label>Idade(anos): </label>
-                        <input class="rounded opacity-80 max-w-[200px] pl-2" type="text" id="id_idade" name="idade" required>
+                    <div class="group-altura mb-4 text-lg text-white">
+                        <div class="input-altura flex justify-between">
+                            <label>Altura(cm): </label>
+                            <input class="rounded opacity-80 max-w-[200px] pl-2 text-black text-sm font-normal focus:outline-2 focus:outline-blue-900 focus:ring focus:outline-offset-0" type="text" id="id_altura" name="altura" required>
+                        </div>
                     </div>
-                </div>
-                <div class="group-select-nv-atividade mb-4 text-lg flex justify-between text-[#330C2F]">
-                    <label for="">Nível de atividade</label>
-                    <select class="rounded opacity-80 max-w-[200px] pl-2" name="nv-atividade" id="id_nv_atividade" required>
-                        <option value="Sedentário" selected>Sedentário (pouco ou nenhum exercício) </option>
-                        <option value="Levemente ativo">Levemente ativo (exercício leve 1 a 3 dias por semana) </option>
-                        <option value="Moderadamente ativo">Moderadamente ativo (exercício moderado, faz esportes 3 a 5 dias por semana)</option>
-                        <option value="Altamente ativo">Altamente ativo (exercício pesado de 5 a 6 dias por semana)</option>
-                        <option value="Extremamente ativo">Extremamente ativo (exercício pesado diariamente e até 2 vezes por dia)</option>
-                    </select>
-                </div>
-                <div class="group-button flex justify-end">
-                    <button class="btn px-5 py-3 bg-transparent border shadow-2xl rounded-lg bg-[#7B287D] text-white">Calcular</button>
-                </div>
+                    <div class="group-idade mb-4 text-lg text-white">
+                        <div class="input-idade flex justify-between">
+                            <label>Idade(anos): </label>
+                            <input class="rounded opacity-80 max-w-[200px] pl-2 text-black text-sm font-normal focus:outline-2 focus:outline-blue-900 focus:ring focus:outline-offset-0" type="text" id="id_idade" name="idade" required>
+                        </div>
+                    </div>
+                    <div class="group-select-nv-atividade mb-4 text-lg flex justify-between text-white">
+                        <label class="mr-4" for="">Nível de atividade</label>
+                        <select class="rounded opacity-80 max-w-[200px] pl-2 bg-[#08AEEA] border text-base font-normal" name="nv-atividade" id="id_nv_atividade" >
+                            <option value="Sedentário" selected>Sedentário (pouco ou nenhum exercício) </option>
+                            <option value="Levemente ativo">Levemente ativo (exercício leve 1 a 3 dias por semana) </option>
+                            <option value="Moderadamente ativo">Moderadamente ativo (exercício moderado, faz esportes 3 a 5 dias por semana)</option>
+                            <option value="Altamente ativo">Altamente ativo (exercício pesado de 5 a 6 dias por semana)</option>
+                            <option value="Extremamente ativo">Extremamente ativo (exercício pesado diariamente e até 2 vezes por dia)</option>
+                        </select>
+                    </div>
+                    <div class="group-idade mb-4 text-lg text-white">
+                        <div class="input-idade flex justify-between">
+                            <label>Objetivo: </label>
+                            <select class="rounded opacity-80 max-w-[200px] pl-2 bg-[#08AEEA] border text-base font-normal" name="nv-atividade" id="id_nv_atividade" >
+                                <option value="Sedentário" selected></option>
+                                <option value="Levemente ativo">Levemente ativo (exercício leve 1 a 3 dias por semana) </option>
+                                <option value="Moderadamente ativo">Moderadamente ativo (exercício moderado, faz esportes 3 a 5 dias por semana)</option>
+                                <option value="Altamente ativo">Altamente ativo (exercício pesado de 5 a 6 dias por semana)</option>
+                                <option value="Extremamente ativo">Extremamente ativo (exercício pesado diariamente e até 2 vezes por dia)</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="group-button flex justify-end">
+                        <button class="btn px-5 py-3 border shadow-2xl rounded-lg bg-blue-900 text-white hover:bg-purple hover:rounded-3xl transition-all duration-300" type="submit">Calcular</button>
+                    </div>
+                </form>
             </div>
         </div>
     </section>
+    <script src="//unpkg.com/vanilla-masker@1.1.1/build/vanilla-masker.min.js"></script>
     <script src="/js/script.js"></script>
 </body>
 </html>
